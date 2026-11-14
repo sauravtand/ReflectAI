@@ -1,4 +1,4 @@
-# DiaryMate development log
+# ReflectAI development log
 
 Single source of truth for what is built, what is next, and why decisions were made.
 Updated at the end of every stage.

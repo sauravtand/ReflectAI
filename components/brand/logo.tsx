@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 
-/** The DiaryMate leaf mark. Decorative: always paired with the wordmark or a label. */
+/** The ReflectAI leaf mark. Decorative: always paired with the wordmark or a label. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg

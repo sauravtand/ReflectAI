@@ -7,7 +7,7 @@ export function SiteHeader() {
   return (
     <header className="border-b border-border/70">
       <PageContainer className="flex h-16 items-center justify-between">
-        <Link href="/" className="rounded-sm" aria-label="DiaryMate home">
+        <Link href="/" className="rounded-sm" aria-label="ReflectAI home">
           <Logo />
         </Link>
       </PageContainer>

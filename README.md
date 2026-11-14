@@ -1,6 +1,6 @@
-# DiaryMate
+# ReflectAI
 
-DiaryMate is a web-based journaling and AI-assisted research application. Participants
+ReflectAI is a web-based journaling and AI-assisted research application. Participants
 write in a journal made of independent **fragments**. After an initial period of normal
 journaling, they can use AI-assisted journaling, where each fragment has its own adaptive
 question-and-answer conversation and the AI composes a final draft from what the participant
@@ -165,3 +165,5 @@ there are routes to cover.
   with `NEXT_PUBLIC_`; Next.js inlines those into the browser bundle.
 - The site is set to `noindex` until a deliberate launch decision is made.
 # ReflectAI
+
+# supa_base:UsfOT16rS6INxuB9
