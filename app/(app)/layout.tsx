@@ -25,9 +25,11 @@ async function AuthenticatedApp({
   children: React.ReactNode;
 }>) {
   await connection();
-  await requireUser();
 
-  return <AppShell>{children}</AppShell>;
+  const { profile } = await requireUser();
+  const isAdmin = profile.role === "admin";
+
+  return <AppShell isAdmin={isAdmin}>{children}</AppShell>;
 }
 
 export default function ApplicationLayout({

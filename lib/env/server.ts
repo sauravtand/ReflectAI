@@ -21,8 +21,9 @@ export const serverEnvSchema = z.object({
 
   // Gemini. The model name is deliberately required, with no default, because
   // it is recorded alongside every AI interaction for research integrity.
-  GEMINI_API_KEY: z.string().min(1),
-  GEMINI_MODEL: z.string().min(1),
+GEMINI_API_KEY: z.string().min(1),
+GEMINI_MODEL: z.string().min(1),
+GEMINI_FALLBACK_MODEL: z.string().min(1),
 });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;

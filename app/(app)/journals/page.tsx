@@ -1,1 +1,25 @@
-import {journalEntries} from "@/lib/fixtures/journals";import {JournalCard} from "@/components/journal/journal-card";import {PageHeader,PrimaryLink} from "@/components/ui/stage2";export default function Page(){return <><PageHeader eyebrow="Your writing" title="Journal history" description="Browse every reflection while keeping normal and AI-assisted entries clearly identified." action={<PrimaryLink href="/journals/new">New journal</PrimaryLink>}/><div className="mb-6 flex gap-2">{['All entries','Normal','AI-assisted'].map((x,i)=><button key={x} className={i===0?'rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground':'rounded-full border border-border px-4 py-2 text-sm'}>{x}</button>)}</div><div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">{journalEntries.map(e=><JournalCard key={e.id} entry={e}/>)}</div></>}
+import { NewJournalEditor } from "@/components/journals/new-journal-editor";
+import { PageHeader } from "@/components/ui/stage2";
+import { createClient } from "@/lib/supabase/server";
+
+export default async function NewJournalPage() {
+  const supabase = await createClient();
+
+  const { data: canUseAi, error } = await supabase.rpc("can_use_ai");
+
+  if (error) {
+    console.error("Unable to check AI availability:", error.message);
+  }
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="New reflection"
+        title="Start a new journal"
+        description="Write freely in a quiet and private space."
+      />
+
+      <NewJournalEditor aiEnabled={!error && canUseAi === true} />
+    </>
+  );
+}
